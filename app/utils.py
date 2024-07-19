@@ -200,7 +200,7 @@ class TokenManager:
                     status_code=status.HTTP_401_UNAUTHORIZED,
                     detail="Invalid x_auth_token",
                 )
-            return user.TokenData(user=username)
+            return user.TokenData(username=username)
         except JWTError:
             raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,
                                 detail="Invalid x_auth_token")

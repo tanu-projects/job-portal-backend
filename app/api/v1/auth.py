@@ -406,7 +406,6 @@ async def login_user(
         dict: A dictionary containing a success message,
                                 access token, and token type.
     """
-    print(request.user)
     user_in_db = await UserDocument.find_one(
             UserDocument.username == user.username)
     if not user_in_db:
